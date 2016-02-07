@@ -10,6 +10,6 @@
 #
 
 class Gif < ApplicationRecord
-  validates :url, presence: true
+  validates :url, presence: true, uniqueness: true, format: URI::regexp(%w(http https))
   validates :title, presence: true
 end
