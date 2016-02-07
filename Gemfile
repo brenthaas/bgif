@@ -33,7 +33,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5.0.beta1'
   gem 'shoulda-matchers'
 end
 
