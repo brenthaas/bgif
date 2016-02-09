@@ -21,6 +21,7 @@ RSpec.describe Gif do
   it { is_expected.to validate_presence_of :url }
   it { is_expected.to validate_uniqueness_of :url }
   it { is_expected.to validate_presence_of :title }
+  it { is_expected.to have_many(:tags).through(:taggings) }
 
   context 'when given an improperly formatted URL' do
     let(:url) { 'nota url'}
