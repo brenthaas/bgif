@@ -15,7 +15,7 @@ RSpec.describe Gif do
   let(:title) { 'Cute cat' }
   let(:url) { 'http://www.google.com/image.gif'}
 
-  subject { Gif.new(title: title, url: url)}
+  subject { Gif.new(title: title, url: url) }
 
   it { is_expected.to be_valid }
   it { is_expected.to validate_presence_of :url }
@@ -24,7 +24,7 @@ RSpec.describe Gif do
   it { is_expected.to have_many(:tags).through(:taggings) }
 
   context 'when given an improperly formatted URL' do
-    let(:url) { 'nota url'}
+    let(:url) { 'not a url'}
 
     it { is_expected.to_not be_valid }
   end
