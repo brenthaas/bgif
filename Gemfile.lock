@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/brenthaas/acts-as-taggable-on.git
+  revision: 70cb11a1834c23d538a27d899753d33fb594af24
+  specs:
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -157,6 +164,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   annotate
   factory_girl_rails
   faker
