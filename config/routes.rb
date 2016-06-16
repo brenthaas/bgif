@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   resources :gifs, only: [:create, :show]
+  resource :slack, only: [:create], controller: :slack
 end
