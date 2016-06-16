@@ -1,4 +1,6 @@
 class SlackController < ApplicationController
+  include SlackResponses
+
   # Slack sends a POST with the format with a content-type header set as
   #    application/x-www-form-urlencoded
   # {
@@ -14,6 +16,13 @@ class SlackController < ApplicationController
   #    response_url=https://hooks.slack.com/commands/1234/5678
   # }
   def create
-    render json: {hello: 'world'}
+    gifs = Gif.joins(:tags).where(tags: {name: command_tags})
+    render json: ephemeral_response("hello world!")
+  end
+
+  private
+
+  def command_tags
+    @command_text ||= params.require(:text).split
   end
 end
