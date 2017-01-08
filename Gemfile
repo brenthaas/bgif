@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '>= 5.0.1', '< 5.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -15,7 +15,7 @@ gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Tag using the popular gem instead of reinventing the wheel
-gem 'acts-as-taggable-on', github: 'brenthaas/acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'rails-dom-testing' # added to support actionmailer 5.0.1+
   gem 'rspec-rails', '~> 3.5.0.beta1'
   gem 'shoulda-matchers'
 end
