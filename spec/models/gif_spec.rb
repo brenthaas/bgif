@@ -20,7 +20,11 @@ RSpec.describe Gif do
   it { is_expected.to be_valid }
   it { is_expected.to validate_presence_of :url }
   it { is_expected.to validate_uniqueness_of :url }
+  it { is_expected.to validate_length_of(:url).is_at_most(256) }
   it { is_expected.to validate_presence_of :title }
+  it { is_expected.to validate_uniqueness_of :title }
+  it { is_expected.to validate_length_of(:title).is_at_most(256) }
+
 
   it 'has a valid factory' do
     expect(FactoryGirl.build_stubbed(:gif)).to be_valid

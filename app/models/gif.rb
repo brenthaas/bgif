@@ -13,8 +13,16 @@ class Gif < ApplicationRecord
   acts_as_taggable
   acts_as_tagger
 
-  validates :url, presence: true, uniqueness: true, format: URI::regexp(%w(http https))
-  validates :title, presence: true
+  validates :url,
+    presence: true,
+    uniqueness: true,
+    format: URI::regexp(%w(http https)),
+    length: { maximum: 256 }
+    
+  validates :title,
+    presence: true,
+    uniqueness: true,
+    length: { minimum: 1, maximum: 256 }
 
 
 end

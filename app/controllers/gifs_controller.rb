@@ -17,6 +17,7 @@ class GifsController < ApplicationController
     end
   end
 
+
   private
 
   def title_param
