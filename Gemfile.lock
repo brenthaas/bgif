@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (4.0.0)
       activerecord (>= 4.0)
+    addressable (2.3.8)
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
@@ -60,6 +61,10 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    json-schema (2.6.2)
+      addressable (~> 2.3.8)
+    json_matchers (0.6.3)
+      json-schema (~> 2.6.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -157,6 +162,7 @@ DEPENDENCIES
   annotate
   factory_girl_rails
   faker
+  json_matchers
   pg (~> 0.18)
   pry-byebug
   pry-rails

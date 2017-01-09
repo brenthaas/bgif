@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'json_matchers'
   gem 'rails-dom-testing' # added to support actionmailer 5.0.1+
   gem 'rspec-rails', '~> 3.5.0.beta1'
   gem 'shoulda-matchers'
