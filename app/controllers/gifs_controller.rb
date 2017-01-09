@@ -1,11 +1,14 @@
 class GifsController < ApplicationController
   def create
-    render json: { foo: "params: #{create_gif_params}"}
+    @gif = Gif.create(url: url_param)
+    respond_to do |format|
+      format.json { render json: @gif, status: :created }
+    end
   end
 
   private
 
-  def create_gif_params
-    params.require(:gif).permit(:name, :url)
+  def url_param
+    params.require(:url)
   end
 end
